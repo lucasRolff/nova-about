@@ -2,6 +2,9 @@
 
 This is a package to add about information for Laravel Nova.
 
+![image](https://user-images.githubusercontent.com/43909932/182262291-21e40655-2b77-46c8-958f-9c0d5882a28a.png)
+
+
 
 ## Installation
 
@@ -27,6 +30,9 @@ php artisan about --only=nova_packages
 ```
 
 This will add your package to the Nova Packages section on the about command as seen below. It will also add the installed version of your package automatically.
+
+![image](https://user-images.githubusercontent.com/43909932/182262317-3c11b16f-e90a-49ad-9cda-4145cfdfed39.png)
+
 
 
 ## Changelog

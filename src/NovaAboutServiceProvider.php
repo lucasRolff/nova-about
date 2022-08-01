@@ -92,7 +92,6 @@ class NovaAboutServiceProvider extends PackageServiceProvider
             'Global Debounce' => fn () => Nova::$debounce.'s',
         ]);
 
-
         // Add Nova Packages to the About Command
         NovaAbout::addPackage('rhyslees/nova-about');
     }

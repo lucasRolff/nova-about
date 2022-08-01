@@ -9,8 +9,7 @@ class NovaAbout
     /**
      * Add your package to the Nova About section.
      *
-     * @param string $pacakge
-     *
+     * @param  string  $pacakge
      * @return void
      */
     public static function addPackage($packagename)

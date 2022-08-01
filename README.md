@@ -26,7 +26,17 @@ php artisan about --only=nova_packages
 ## Usage in your Nova package
 
 ```php
-\RhysLees\NovaAbout\NovaAbout::addPackage('your-name/your-package');
+//YourPackageServiceProvider.php
+
+/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register(): void
+{
+    \RhysLees\NovaAbout\NovaAbout::addPackage('your-name/your-package');
+}
 ```
 
 This will add your package to the Nova Packages section on the about command as seen below. It will also add the installed version of your package automatically.

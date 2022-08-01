@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace RhysLees\NovaAbout\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class NovaAboutCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'nova-about';
 
     public $description = 'My command';
 

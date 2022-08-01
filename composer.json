@@ -46,7 +46,10 @@
         "laravel": {
             "providers": [
                 "RhysLees\\NovaAbout\\NovaAboutServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "NovaAbout": "RhysLees\\NovaAbout\\Facades\\NovaAbout"
+            }
         }
     },
     "minimum-stability": "dev",

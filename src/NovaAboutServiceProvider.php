@@ -2,9 +2,9 @@
 
 namespace RhysLees\NovaAbout;
 
+use RhysLees\NovaAbout\Commands\NovaAboutCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RhysLees\NovaAbout\Commands\NovaAboutCommand;
 
 class NovaAboutServiceProvider extends PackageServiceProvider
 {

@@ -12,9 +12,14 @@ class NovaAbout
      * @param  string  $pacakge
      * @return void
      */
-    public static function addPackage($packagename)
+    public static function addPackage($packageName)
     {
-        $packageVersion = \Composer\InstalledVersions::getVersion($packagename);
-        AboutCommand::add('Nova Packages', $packagename, $packageVersion);
+        try {
+            $packageVersion = \Composer\InstalledVersions::getVersion($packageName);
+        } catch (\Exception $e) {
+            $packageVersion = $e->getMessage();
+        }
+
+        AboutCommand::add('Nova Packages', $packageName, $packageVersion);
     }
 }

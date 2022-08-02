@@ -53,7 +53,7 @@ class NovaAboutServiceProvider extends PackageServiceProvider
                 break;
 
             default:
-                $pagination = config('nova.pagination');
+                $pagination = '<fg=red;options=bold>Invalid</>';
                 break;
         }
 

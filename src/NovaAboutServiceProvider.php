@@ -29,53 +29,16 @@ class NovaAboutServiceProvider extends PackageServiceProvider
     {
         parent::register();
 
-        // Check if the nova license is valid
-        $validLicense = false;
-
-        $response = Nova::checkLicense();
-        if ($response->status() == 204) {
-            $validLicense = true;
-        }
-
-        // Check Pagination is valid
-        $pagination = '';
-        switch (config('nova.pagination')) {
-            case 'simple':
-                $pagination = config('nova.pagination');
-                break;
-
-            case 'load-more':
-                $pagination = config('nova.pagination');
-                break;
-
-            case 'links':
-                $pagination = config('nova.pagination');
-                break;
-
-            default:
-                $pagination = '<fg=red;options=bold>Invalid</>';
-                break;
-        }
-
-        $pagination = config('nova.pagination');
-        if (
-            config('nova.pagination') != 'simple' &&
-            config('nova.pagination') != 'load-more' &&
-            config('nova.pagination') != 'links'
-        ) {
-            $pagination = '<fg=red;options=bold>Invalid</>';
-        }
-
         AboutCommand::add('Nova', [
             'Version' => fn () => Nova::version(),
-            'License Key' => fn () => $validLicense ? '<fg=green;options=bold>Valid</>' : '<fg=red;options=bold>Invalid</>',
+            'License Key' => fn () => $this->validLicenseKey() ? '<fg=green;options=bold>Valid</>' : '<fg=red;options=bold>Invalid</>',
 
             'Name' => fn () => config('nova.name'),
             'Path' => fn () => Nova::path(),
 
             'Theme Switcher' => fn () => Nova::$withThemeSwitcher ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
             'RTL Enabled' => fn () => Nova::rtlEnabled() ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
-            'Pagination' => fn () => $pagination,
+            'Pagination' => fn () => $this->resolvePaginationValue(),
             'Storage Disk' => fn () => config('nova.storage_disk'),
             'Currency' => fn () => config('nova.currency'),
 
@@ -94,5 +57,27 @@ class NovaAboutServiceProvider extends PackageServiceProvider
 
         // Add Nova Packages to the About Command
         NovaAbout::addPackage('rhyslees/nova-about');
+    }
+
+    protected function validLicenseKey(): bool
+    {
+        $response = Nova::checkLicense();
+
+        return $response->status() == 204;
+    }
+
+    protected function resolvePaginationValue(): string 
+    {
+        $pagination = config('nova.pagination');
+
+        if (
+            $pagination != 'simple' &&
+            $pagination != 'load-more' &&
+            $pagination != 'links'
+        ) {
+            $pagination = '<fg=red;options=bold>Invalid</>';
+        }
+
+        return $pagination;
     }
 }

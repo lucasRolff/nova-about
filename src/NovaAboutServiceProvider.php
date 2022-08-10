@@ -66,7 +66,7 @@ class NovaAboutServiceProvider extends PackageServiceProvider
         return $response->status() == 204;
     }
 
-    protected function resolvePaginationValue(): string 
+    protected function resolvePaginationValue(): string
     {
         $pagination = config('nova.pagination');
 

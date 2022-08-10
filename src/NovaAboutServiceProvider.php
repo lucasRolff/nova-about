@@ -31,14 +31,14 @@ class NovaAboutServiceProvider extends PackageServiceProvider
 
         AboutCommand::add('Nova', [
             'Version' => fn () => Nova::version(),
-            'License Key' => fn () => $this->validateLicenseKey() ? '<fg=green;options=bold>Valid</>' : '<fg=red;options=bold>Invalid</>',
+            'License Key' => fn () => $this->validLicenseKey() ? '<fg=green;options=bold>Valid</>' : '<fg=red;options=bold>Invalid</>',
 
             'Name' => fn () => config('nova.name'),
             'Path' => fn () => Nova::path(),
 
             'Theme Switcher' => fn () => Nova::$withThemeSwitcher ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
             'RTL Enabled' => fn () => Nova::rtlEnabled() ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
-            'Pagination' => fn () => $this->resolvePagination(),
+            'Pagination' => fn () => $this->resolvePaginationValue(),
             'Storage Disk' => fn () => config('nova.storage_disk'),
             'Currency' => fn () => config('nova.currency'),
 
@@ -59,14 +59,14 @@ class NovaAboutServiceProvider extends PackageServiceProvider
         NovaAbout::addPackage('rhyslees/nova-about');
     }
 
-    protected function validateLicenseKey(): bool
+    protected function validLicenseKey(): bool
     {
         $response = Nova::checkLicense();
 
         return $response->status() == 204;
     }
 
-    protected function resolvePagination(): string 
+    protected function resolvePaginationValue(): string 
     {
         $pagination = config('nova.pagination');
 

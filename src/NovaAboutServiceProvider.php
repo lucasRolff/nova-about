@@ -59,13 +59,21 @@ class NovaAboutServiceProvider extends PackageServiceProvider
         NovaAbout::addPackage('rhyslees/nova-about');
     }
 
+    /**
+     * Check if the nova license key is valid.
+     *
+     * @return bool
+     */
     protected function validLicenseKey(): bool
     {
-        $response = Nova::checkLicense();
-
-        return $response->status() == 204;
+        return Nova::checkLicenseValidity();
     }
 
+    /**
+     * Return the pagination value.
+     *
+     * @return string
+     */
     protected function resolvePaginationValue(): string
     {
         $pagination = config('nova.pagination');

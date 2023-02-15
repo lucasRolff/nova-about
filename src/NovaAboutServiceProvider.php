@@ -22,8 +22,6 @@ class NovaAboutServiceProvider extends PackageServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -61,8 +59,6 @@ class NovaAboutServiceProvider extends PackageServiceProvider
 
     /**
      * Check if the nova license key is valid.
-     *
-     * @return bool
      */
     protected function validLicenseKey(): bool
     {
@@ -71,8 +67,6 @@ class NovaAboutServiceProvider extends PackageServiceProvider
 
     /**
      * Return the pagination value.
-     *
-     * @return string
      */
     protected function resolvePaginationValue(): string
     {

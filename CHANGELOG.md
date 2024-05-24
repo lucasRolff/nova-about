@@ -2,6 +2,25 @@
 
 All notable changes to `nova-about` will be documented in this file.
 
+## 2.1.0 - 2024-05-24
+
+### What's Changed
+
+- Added support for Laravel 11
+
+* Bump aglipanci/laravel-pint-action from 2.1.0 to 2.2.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/9
+* Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/10
+* Bump aglipanci/laravel-pint-action from 2.2.0 to 2.3.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/11
+* Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 by @dependabot in https://github.com/RhysLees/nova-about/pull/12
+* Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/13
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/RhysLees/nova-about/pull/14
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/RhysLees/nova-about/pull/15
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/RhysLees/nova-about/pull/16
+* Bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/RhysLees/nova-about/pull/17
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/RhysLees/nova-about/pull/19
+
+**Full Changelog**: https://github.com/RhysLees/nova-about/compare/2.0.0...2.0.1
+
 ## 2.0.0 - 2023-02-15
 
 Laravel 10 Support

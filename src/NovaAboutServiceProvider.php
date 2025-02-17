@@ -43,10 +43,10 @@ class NovaAboutServiceProvider extends PackageServiceProvider
             'Notification Center' => fn () => Nova::$withNotificationCenter ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
             'Notification Polling' => fn () => Nova::$notificationPollingInterval.'s',
 
-            'Authentication' => fn () => Nova::$withAuthentication ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
+            'Authentication' => fn () => Nova::routes()->withAuthentication ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
             'Authentication Guard' => fn () => config('nova.guard'),
 
-            'Password Reset' => fn () => Nova::$withPasswordReset ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
+            'Password Reset' => fn () => Nova::routes()->withPasswordReset ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',
             'Password Reset Broker' => fn () => config('nova.passwords'),
 
             'Global Search' => fn () => Nova::$withGlobalSearch ? '<fg=yellow;options=bold>Enabled</>' : 'OFF',

@@ -2,6 +2,16 @@
 
 All notable changes to `nova-about` will be documented in this file.
 
+## 2.2.0 - 2025-02-17
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.2.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/21
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/RhysLees/nova-about/pull/22
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/RhysLees/nova-about/pull/23
+
+**Full Changelog**: https://github.com/RhysLees/nova-about/compare/2.0.1...2.2.0
+
 ## 2.1.0 - 2024-05-24
 
 ### What's Changed
